@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO ART | SARVOL</title>
+    <style>
+        :root { --rouge: #bc2c16; --noir: #050505; --gris: #121212; --blanc: #eeeeee; }
+        body {
+            background-color: var(--noir);
+            color: var(--blanc);
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            /* AJOUT DE TON DESSIN EN ARRIÈRE-PLAN */
+            background-image:
+                linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.8)),
+                url('dessins/Toi ma star.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .nav-back { align-self: flex-start; color: var(--rouge); text-decoration: none; font-weight: bold; margin-bottom: 30px; border: 1px solid var(--rouge); padding: 8px 15px; border-radius: 4px; transition: 0.3s; }
+        .nav-back:hover { background: var(--rouge); color: var(--blanc); }
+        h1 { color: var(--rouge); letter-spacing: 8px; text-transform: uppercase; text-align: center; }
+        .section-title { width: 100%; max-width: 1200px; border-bottom: 2px solid var(--rouge); margin: 60px 0 30px; padding-bottom: 15px; letter-spacing: 5px; text-transform: uppercase; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 35px; width: 100%; max-width: 1200px; }
+        .card { background: rgba(18, 18, 18, 0.9); border: 1px solid #222; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; backdrop-filter: blur(5px); }
+        .card:hover { border-color: var(--rouge); transform: translateY(-5px); }
+
+        .media-box { position: relative; width: 100%; height: 300px; background: #000; cursor: pointer; }
+        .media-box video, .media-box img { width: 100%; height: 100%; object-fit: contain; }
+
+        .video-ui { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.9)); padding: 15px; display: flex; align-items: center; gap: 15px; opacity: 0; transition: opacity 0.3s; }
+        .media-box:hover .video-ui { opacity: 1; }
+        .play-btn { color: var(--rouge); font-size: 1.2rem; }
+        .progress-container { flex-grow: 1; height: 4px; background: rgba(255,255,255,0.1); }
+        .progress-bar { height: 100%; background: var(--rouge); width: 0%; }
+
+        .content { padding: 20px; }
+        .content h3 { color: var(--rouge); margin: 0 0 10px; font-size: 1.1rem; text-transform: uppercase; }
+
+        .description { font-size: 0.95rem; opacity: 0.8; line-height: 1.6; color: #ccc; white-space: pre-line; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <a href="../index.html" class="nav-back">← RETOUR ACCUEIL</a>
+    <h1>ARCHIVES VISUELLES</h1>
+
+    <h2 class="section-title">Animations</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="media-box" onclick="togglePlay(this)">
+                <video loop><source src="animations/rose_jaune.mp4" type="video/mp4"></video>
+                <div class="video-ui"><span class="play-btn">▶</span><div class="progress-container"><div class="progress-bar"></div></div></div>
+            </div>
+            <div class="content"><h3>Rose et Jaune</h3><p class="description">C'est mon couple favoris'</p></div>
+        </div>
+
+        <div class="card">
+            <div class="media-box" onclick="togglePlay(this)">
+                <video loop><source src="animations/Xmax_vs_Bleu.mp4" type="video/mp4"></video>
+                <div class="video-ui"><span class="play-btn">▶</span><div class="progress-container"><div class="progress-bar"></div></div></div>
+            </div>
+            <div class="content"><h3>Xmax vs Bleu</h3><p class="description">Le démon de Jaune et son frère bleu</p></div>
+        </div>
+
+        <div class="card">
+            <div class="media-box" onclick="togglePlay(this)">
+                <video loop><source src="animations/pas_un_nounours.mp4" type="video/mp4"></video>
+                <div class="video-ui"><span class="play-btn">▶</span><div class="progress-container"><div class="progress-bar"></div></div></div>
+            </div>
+            <div class="content"><h3>Pas un nounours</h3><p class="description">Jaune et Rose et un faux nounours</p></div>
+        </div>
+
+        <div class="card">
+            <div class="media-box" onclick="togglePlay(this)">
+                <video loop><source src="animations/Tavol_vole.mp4" type="video/mp4"></video>
+                <div class="video-ui"><span class="play-btn">▶</span><div class="progress-container"><div class="progress-bar"></div></div></div>
+            </div>
+            <div class="content"><h3>Tavol Vole</h3><p class="description">Une des scènes de ma série Shadow Alliance que j'avais essayé de faire seul.</p></div>
+        </div>
+
+        <div class="card">
+            <div class="media-box" onclick="togglePlay(this)">
+                <video loop><source src="animations/Tavol_vole 2.mp4" type="video/mp4"></video>
+                <div class="video-ui"><span class="play-btn">▶</span><div class="progress-container"><div class="progress-bar"></div></div></div>
+            </div>
+            <div class="content"><h3>Tavol Vole 2</h3><p class="description">Une des scènes de ma série Shadow Alliance que j'avais essayé de faire seul</p></div>
+        </div>
+
+        <div class="card">
+            <div class="media-box" onclick="togglePlay(this)">
+                <video loop><source src="animations/face_à_face.mp4" type="video/mp4"></video>
+                <div class="video-ui"><span class="play-btn">▶</span><div class="progress-container"><div class="progress-bar"></div></div></div>
+            </div>
+            <div class="content"><h3>Face à Face</h3><p class="description">Une des scènes de ma série Shadow Alliance que j'avais essayé de faire seul'</p></div>
+        </div>
+
+        <div class="card">
+            <div class="media-box" onclick="togglePlay(this)">
+                <video loop><source src="animations/rose_et_sa_mère.mp4" type="video/mp4"></video>
+                <div class="video-ui"><span class="play-btn">▶</span><div class="progress-container"><div class="progress-bar"></div></div></div>
+            </div>
+            <div class="content"><h3>Rose et sa mère</h3><p class="description">Là c'est Rose et sa mère'</p></div>
+        </div>
+
+        <div class="card">
+            <div class="media-box" onclick="togglePlay(this)">
+                <video loop><source src="animations/Jaune_et_Orange.mp4" type="video/mp4"></video>
+                <div class="video-ui"><span class="play-btn">▶</span><div class="progress-container"><div class="progress-bar"></div></div></div>
+            </div>
+            <div class="content"><h3>Jaune et Orange</h3><p class="description">Juste ce sont deux meilleurs amis pour la vie</p></div>
+        </div>
+
+        <div class="card">
+            <div class="media-box" onclick="togglePlay(this)">
+                <video loop><source src="animations/euh.mp4" type="video/mp4"></video>
+                <div class="video-ui"><span class="play-btn">▶</span><div class="progress-container"><div class="progress-bar"></div></div></div>
+            </div>
+            <div class="content"><h3>Euh</h3><p class="description"></p>Voilà des anciens personnages de primaire que j'ai refait leur design'</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Concepts & Dessins (Images)</h2>
+    <div class="grid">
+        <div class="card"><div class="media-box"><img src="dessins/sarvol_original.png"></div><div class="content"><h3>Sarvol Original</h3><p class="description">J'ai essayé de faire mon propre fond écrand 😋'</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/shadow_alliance.png"></div><div class="content"><h3>Shadow Alliance</h3><p class="description">Poster de ma série Shadow Alliance que j'ai laissé de côté car j'étais seul a le faire 🥲</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/Hibiscus.jpg"></div><div class="content"><h3>Hibiscus</h3><p class="description">C'est un dessin qui montre que j'ai fini de parler d'étoile et que j'ai trouvé quelque choses de définitive ma Hibiscus (copine) et pourquoi une fleur car ça vie et ça meurs 🌺</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/deesse_lune.png"></div><div class="content"><h3>Déesse Lune</h3><p class="description">J'ai essayé de réfléchir un design pour cette perso mais j'avais prévu qu'elle rentre dans la série Shadow Alliance (finalement annulé)'</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/Soul.jpg"></div><div class="content"><h3>Soul</h3><p class="description">J'ai fait ça car j'ai essayé de laissé faire mon imagination 🤔</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/Moi.jpg"></div><div class="content"><h3>Moi</h3><p class="description">C'est un dessin de moi avec quelque objet qui me représente' 🤠</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/Dime.jpg"></div><div class="content"><h3>Dime</h3><p class="description">Ce dessin est fait en 2026 et j'ai utiliser une vrai photo pour un de mes persos' 😎</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/plage.png"></div><div class="content"><h3>Plage</h3><p class="description">C'est un ancien dessin fait pour une musique sur le thème le plage' 🎵</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/sarvol.png"></div><div class="content"><h3>Sarvol V2</h3><p class="description">C'est le nouveau design de mon profil fait en 2025' </p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/ciel sarvol.png"></div><div class="content"><h3>Ciel Sarvol</h3><p class="description">C'est un dessin qui montre moi dans le ciel, pourquoi le ciel ? car quand je regarde le ciel je repense a tout ce que j'ai crée</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/sarvol hallowen.png"></div><div class="content"><h3>Halloween</h3><p class="description">C'est l'ancien design de mon profil avec une mofication pour le thème Halloween</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/Sarvol triste.png"></div><div class="content"><h3>Triste</h3><p class="description">C'est le nouveau design de mon profil fait en 2025 mais modifier en mode triste 🥲'</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/sarvol ancien.png"></div><div class="content"><h3>Ancien</h3><p class="description">C'est l'ancien design de mon profil en 2024</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/mon étoile.png"></div><div class="content"><h3>Mon étoile</h3><p class="description">C'est moi et future copine indéfini'</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/Toi ma star.png"></div><div class="content"><h3>Toi ma star</h3><p class="description">Celui là est un dessin de ma crush encore indéfini et moi a la plage, ce dessin était fait pour ma pochette de ma musique Ma_star ❤️‍🔥</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/Ma crush.jpg"></div><div class="content"><h3>Ma crush</h3><p class="description">Ce dessin était un cadeau pour mon ex crush avant 😔</p></div></div>
+        <div class="card"><div class="media-box"><img src="dessins/gacha character.jpg"></div><div class="content"><h3>Gacha Style</h3><p class="description"> : Ce dessin est inspiré d'un dessin d'une personne qui utilise Gacha Life et j'ai essayé de le reproduire a mon style' 😁</p></div></div>
+    </div>
+
+    <script>
+        function togglePlay(container) {
+            const video = container.querySelector('video');
+            const btn = container.querySelector('.play-btn');
+            if (video.paused) { video.play(); btn.innerText = "⏸"; }
+            else { video.pause(); btn.innerText = "▶"; }
+        }
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('timeupdate', () => {
+                const bar = video.closest('.media-box').querySelector('.progress-bar');
+                if (bar) { bar.style.width = (video.currentTime / video.duration) * 100 + '%'; }
+            });
+        });
+    </script>
+</body>
+</html>

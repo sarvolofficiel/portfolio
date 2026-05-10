@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARVOL | Portfolio</title>
+
+    <link rel="icon" type="image/png" href="Sarvol.png">
+
+    <style>
+        :root {
+            --rouge: #bc2c16;
+            --noir: #050505;
+            --gris: #121212;
+            --blanc: #eeeeee;
+            --cyan: #00f2ff;
+        }
+
+        body {
+            background-color: var(--noir);
+            color: var(--blanc);
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            background-image: url('fond-galaxie.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(0deg, rgba(5,5,5,0.7) 0%, rgba(188,44,22,0.3) 100%);
+            z-index: 1;
+        }
+
+        .profile-pic {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            margin-bottom: 25px;
+            z-index: 2;
+            filter: drop-shadow(5px 5px 0px var(--rouge)) drop-shadow(-2px -2px 0px rgba(255,255,255,0.5));
+            transition: all 0.5s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1) rotate(-5deg);
+            filter: drop-shadow(0px 0px 15px var(--rouge));
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: var(--blanc);
+            margin: 0;
+            letter-spacing: 12px;
+            z-index: 2;
+            text-shadow: 3px 3px 0px var(--rouge);
+            font-weight: bold;
+        }
+
+        .subtitle-container {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: var(--rouge);
+            padding: 5px 15px;
+            border-radius: 4px;
+            z-index: 2;
+            font-size: 1rem;
+            color: var(--blanc);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 90%;
+            max-width: 1100px;
+            padding: 50px 0 50px 0;
+            z-index: 2;
+        }
+
+        .card {
+            background: var(--gris);
+            border: 1px solid #333;
+            padding: 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            border-color: var(--rouge);
+            transform: translateY(-8px);
+            box-shadow: 0 5px 15px rgba(188, 44, 22, 0.2);
+        }
+
+        .card.tech-card:hover {
+            border-color: var(--cyan);
+            box-shadow: 0 5px 15px rgba(0, 242, 255, 0.2);
+        }
+
+        .card h3 { color: var(--rouge); margin-top: 0; letter-spacing: 2px; }
+        .card.tech-card h3 { color: var(--cyan); }
+        .card p { font-size: 0.9rem; opacity: 0.8; line-height: 1.5; }
+
+        .card::before { content: "> "; color: var(--rouge); font-weight: bold; }
+        .card.tech-card::before { color: var(--cyan); }
+
+        .story-container {
+            width: 90%;
+            max-width: 900px;
+            background: #0a0a0a;
+            border: 1px solid #222;
+            padding: 40px;
+            margin-bottom: 100px;
+            border-radius: 10px;
+            line-height: 1.8;
+            z-index: 2;
+        }
+
+        .story-title {
+            color: var(--rouge);
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--rouge);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+        }
+
+        .story-text {
+            white-space: pre-line;
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .highlight { color: var(--rouge); font-weight: bold; }
+        .goal { color: var(--cyan); font-weight: bold; }
+
+        footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed #333;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Sarvol.png" alt="Sarvol Character" class="profile-pic">
+        <h1>SARVOL</h1>
+        <div class="subtitle-container">
+            <p style="margin: 0;">Artiste | Développeur | Chanteur</p>
+        </div>
+    </header>
+
+    <div class="grid">
+        <a href="Album_Tic/tic.html" class="card">
+            <h3>MUSIQUE</h3>
+            <p>Exploration sur ce que je fais en musique</p>
+        </a>
+
+        <a href="Art/concept-art.html" class="card">
+            <h3>CONCEPT ART</h3>
+            <p>Exploration sur mon style de dessin et mes animations réalisés</p>
+        </a>
+
+        <a href="Tech/bots.html" class="card tech-card">
+            <h3>TECH / BOTS</h3>
+            <p>Exploration sur mes exploits en tech</p>
+        </a>
+    </div>
+
+    <div class="story-container">
+        <div class="story-title">> En fait c'est qui Sarvol ?</div>
+        <div class="story-text">
+            Tout commence en maternelle où je savais pas vraiment pourquoi j'existais pourquoi la terre ça existe et puis la prof nous demande de faire un dessin comme activité alors je suis les ordres et puis je fais un rond avec des mains et des jambes et la prof vient me demander "comment tu vas l'appeler" j'ai regardé mon crayon de couleur et j'ai dit <span class="highlight">"Jaune"</span>.
+
+            Et puis j'étais souvent en conflit avec ma petite sœur en maternelle et puis on fait la paix et puis on regarde des chaines youtube comme Pencilmation et Alan Becker et je vois tout ce style et ça m'a inspiré alors en maternelle je recommence à dessiner et cette fois je fais une nouvelle version de Jaune un stickman sans visage et une mèche de cheveux sur la tête et c'est là où j'ai pas su que j'allais créer un projet incroyable pour moi.
+
+            Ma sœur et moi on a commencé à réfléchir ensemble et il faut savoir que à l'époque moi j'étais très mauvais niveau dessin mais elle elle mettait du volume vraiment comme des vrais corps alors j'ai dit à ma sœur et on se met d'accord que à nous deux on va faire le <span class="highlight">club BD</span> (car nos premières lettres forment BD D c'est moi et B c'est elle) et puis on commence à dessiner l'histoire de Jaune et sa famille et c'est allé très loin on a même fait tous ses petits enfants jusqu'au collège où tout change.
+
+            Ma sœur commence un peu à s'éloigner du club BD pour faire ses propres BD et moi je savais pas quoi faire en 6ème j'avais des stickmans et elle tout le monde aimait son style alors j'ai mis pause au dessin et abandonné le club BD mais en y repensant à tout ce que j'ai créé Jaune, ses amis, sa famille je me suis dit que je dois faire une nouvelle révolution dans mon style alors je regarde plein de styles de dessin et je teste et je recommence comme par exemple avant mon style actuel (en 4ème) mes personnages avaient des chaussures pointues comme ceux d'un livre du petit prince que j'ai vu et dans un autre style ils ont un nez moche pour être honnête et tous ces tests m'ont fait arriver à ce style encore en train de s'améliorer et pour que le club BD soit dans une autre forme je me suis mis au code avec l'IA car je savais pas coder et ça me prendrait un temps fou en 6ème et 5ème mais je devais pas dépendre que de ça ça doit être mes idées et pas celles des autres et j'ai trouvé une fille que j'aimais en 6ème et ses yeux m'ont fait penser à l'espace donc je l'ai surnommée mon étoile dans une musique de Boywithuke Prairie et j'ai repris l'instru pour faire ma musique avant cette musique j'en faisais bien avant en 6ème et j'ai vu que ça me rendait remarquable et j'ai continué et continué mais en 5ème je voulais viser plus grand faire une série je faisais l'animation (que j'ai encore), les musiques (que j'ai encore), les persos et l'histoire mais je l'ai abandonnée à la fin de l'année à cause de la solitude quand je fais ça seul et aussi du temps que ça me prenait.
+
+            En 4ème maintenant pendant que j'écris ce texte je chante, j'anime encore, et je dessine et j'ai enfin une copine et je suis heureux que tous mes efforts font que je suis un peu différent dans mon collège et mon objectif est d'aller à la <span class="goal">IIM</span> car je vois que à la IIM c'est pas la même chose ce sont des personnes qui sont passionnées, créatives et je voudrais vraiment avoir une équipe, des amis là-bas, donc peu importe si je tombe en chemin je vais me relever car ce que je veux c'est enfin d'être près des personnes qui me comprennent et qui créent plus que moi et enfin me sentir dans une catégorie de personnes passionnées.
+        </div>
+
+        <footer>
+            Site fait par Sarvol et Gemini<br>
+            Images, Dessins et Musiques par Sarvol
+        </footer>
+    </div>
+
+</body>
+</html>

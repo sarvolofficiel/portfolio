@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECH EXPLOITS | SARVOL</title>
+    <style>
+        :root { --cyan: #00f2ff; --noir: #050505; --gris: #111; --vert: #00ff41; --rouge: #bc2c16; }
+        body { background-color: var(--noir); color: #eee; font-family: 'Courier New', monospace; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
+
+        .nav-back { align-self: flex-start; color: var(--cyan); text-decoration: none; border: 1px solid var(--cyan); padding: 8px 15px; margin-bottom: 30px; border-radius: 4px; transition: 0.3s; }
+        .nav-back:hover { background: var(--cyan); color: var(--noir); }
+
+        h1 { color: var(--cyan); text-transform: uppercase; letter-spacing: 5px; text-align: center; border-bottom: 2px solid var(--cyan); padding-bottom: 10px; width: 100%; max-width: 900px; }
+
+        .exploit-card { width: 100%; max-width: 900px; background: var(--gris); border: 1px solid #333; border-radius: 12px; padding: 25px; margin-bottom: 30px; position: relative; }
+
+        .exploit-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .exploit-title { color: var(--cyan); font-size: 1.6rem; margin: 0; text-transform: uppercase; }
+        .status-tag { background: rgba(0, 255, 65, 0.1); color: var(--vert); border: 1px solid var(--vert); padding: 3px 10px; border-radius: 4px; font-size: 0.8rem; }
+
+        .method-box { background: #000; padding: 15px; border-left: 4px solid var(--rouge); margin-top: 15px; }
+        .method-box h3 { color: var(--rouge); margin-top: 0; font-size: 1rem; text-transform: uppercase; }
+        .method-box p { font-size: 0.9rem; line-height: 1.5; margin-bottom: 0; }
+
+        .tech-tags { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .tag { font-size: 0.75rem; background: #222; color: #888; padding: 2px 8px; border-radius: 3px; }
+
+        .achievement-badge { display: inline-block; margin-top: 15px; padding: 8px 15px; background: rgba(0, 242, 255, 0.1); border: 1px solid var(--cyan); border-radius: 5px; color: var(--cyan); font-weight: bold; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <a href="../index.html" class="nav-back">← TERMINAL_EXIT</a>
+    <h1>LOGS DES EXPLOITS TECHNIQUES</h1>
+
+    <div class="exploit-card">
+        <div class="exploit-header">
+            <h2 class="exploit-title">Build de Distribution Linux</h2>
+            <span class="status-tag">TRAINING_COMPLETE</span>
+        </div>
+        <p>Réussite de la création d'une distribution personnalisée basée sur Arch Linux. Ce projet a servi d'entraînement intensif pour comprendre les couches profondes du système.</p>
+
+        <div class="method-box">
+            <h3>Comment j'ai fait :</h3>
+            <p>J'ai configuré l'intégralité du système à partir de zéro, en gérant le noyau (kernel), les dépôts et les environnements de bureau. Une fois la maîtrise acquise, j'ai supprimé la distro pour libérer de l'espace, gardant le savoir-faire pour mes futurs déploiements.</p>
+        </div>
+        <div class="tech-tags">
+            <span class="tag">Kernel Optimization</span><span class="tag">Pacman</span><span class="tag">Systemd</span><span class="tag">Shell Scripting</span>
+        </div>
+        <div class="achievement-badge">🏆 EXPLOIT : Maîtrise de l'architecture OS</div>
+    </div>
+
+    <div class="exploit-card">
+        <div class="exploit-header">
+            <h2 class="exploit-title">Catsop : IA Fonctionnelle</h2>
+            <span class="status-tag">OPERATIONAL</span>
+        </div>
+        <p>Conception et déploiement de l'assistant Catsop, une IA capable d'interagir en temps réel et de m'épauler dans mes projets créatifs et scolaires.</p>
+
+        <div class="method-box">
+            <h3>Comment j'ai fait :</h3>
+            <p>J'ai utilisé l'API Google Gemini via Python pour créer un pont entre mon terminal et l'intelligence artificielle. J'ai intégré une gestion de mémoire JSON et un système de "failover" multi-modèles pour garantir que l'IA soit toujours disponible.</p>
+        </div>
+        <div class="tech-tags">
+            <span class="tag">Google API</span><span class="tag">Python 3.x</span><span class="tag">JSON Memory</span><span class="tag">AI Prompt Engineering</span>
+        </div>
+        <div class="achievement-badge">🏆 EXPLOIT : Maîtrise totale de l'intégration IA</div>
+    </div>
+
+    <div class="tech-philosophy" style="width: 100%; max-width: 1200px; margin-top: 60px; padding: 30px; background: rgba(0, 242, 255, 0.05); border: 1px solid var(--cyan); border-radius: 12px;">
+        <h2 style="color: var(--cyan); letter-spacing: 3px; text-transform: uppercase; margin-top: 0;">> POURQUOI L'IA ?</h2>
+
+        <div style="font-size: 1rem; line-height: 1.8; color: #ccc; white-space: pre-line;">
+            J'utilise l'IA car c'est devenu une révolution dans le monde et je devais m'y adapté au changement et avant j'utilisais l'ia pour des questions mais j'ai appris que je pouvais allé plus loin avec comme par exemple sans le code j'aurai jamais connue linux et tout ce que je savais pas sur les grand industrie comme Google et Microsoft.
+
+            Et pourquoi je code pas moi même ? Car enfaite sinon ça serait un peu chaud pour moi je peux dire un gars qui c'est codé dessiner, animer, et chanter c'est un peu trop pour moi surtout retenir car j'ai des paroles a retenir, des évals tout ça bref, je dit mes idées aux ia il me le font et parfois il faut s'y connaitre un peu dans le code car sinon ça serait un peu nul, par exemple a chaque fois quelque choses va pas je le modifie moi même avec des sources.
+        </div>
+    </div>
+
+    <style>
+        /* Si tu n'as pas encore défini var(--cyan) dans ton fichier Tech */
+        :root { --cyan: #00f2ff; }
+    </style>
+</body>
+</html>

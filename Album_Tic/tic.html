@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARVOL MUSIC</title>
+    <style>
+        :root {
+            --rouge: #bc2c16;
+            --rouge-hover: #ff3c1f;
+            --noir-pur: #050505;
+            --noir-card: #121212;
+            --gris-texte: #b3b3b3;
+            --blanc: #ffffff;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            background: linear-gradient(-45deg, #050505, #1a0402, #050505, #3d0a04);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--blanc);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .main-container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 260px;
+            background-color: var(--noir-pur);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-right: 1px solid #282828;
+        }
+
+        .nav-link {
+            color: var(--gris-texte);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover { color: var(--blanc); }
+
+        /* Style pour les crédits d'instrus dans la sidebar */
+        .instru-stats {
+            margin-top: 10px;
+            padding: 15px;
+            background: rgba(188, 44, 22, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(188, 44, 22, 0.2);
+        }
+
+        .instru-item {
+            font-size: 0.85rem;
+            color: var(--gris-texte);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .instru-item b { color: var(--rouge); }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+            background: linear-gradient(to bottom, rgba(188, 44, 22, 0.1), transparent);
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 5px; text-transform: uppercase; }
+
+        .credits-text {
+            font-family: 'Brush Script MT', 'Courier New', cursive;
+            font-size: 1.4rem;
+            color: var(--rouge);
+            text-shadow: 0 0 10px rgba(188, 44, 22, 0.5);
+            margin: 0 0 30px 0;
+        }
+
+        .tracklist { width: 100%; border-collapse: collapse; }
+        .tracklist tr { border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: 0.2s; cursor: pointer; }
+        .tracklist tr:hover { background-color: rgba(255, 255, 255, 0.1); }
+        .tracklist td { padding: 12px 15px; color: var(--gris-texte); font-size: 0.9rem; }
+        .tracklist .track-title { color: var(--blanc); font-weight: 500; }
+        .tracklist .play-icon { width: 40px; color: var(--rouge); text-align: center; }
+
+        .player-bar {
+            height: 90px;
+            background-color: #181818;
+            border-top: 1px solid #282828;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        .now-playing { display: flex; align-items: center; width: 30%; }
+        .now-playing-info h4 { margin: 0; font-size: 0.9rem; }
+        .now-playing-info p { margin: 0; font-size: 0.75rem; color: var(--gris-texte); }
+
+        .player-controls { width: 40%; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        audio { width: 100%; height: 35px; filter: invert(100%) hue-rotate(180deg) brightness(1.5); }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <h2 style="color: var(--rouge); letter-spacing: 2px;">SARVOL</h2>
+            <a href="../index.html" class="nav-link">🏠 Accueil</a>
+
+            <div style="margin-top: 20px; border-top: 1px solid #282828; padding-top: 20px;">
+                <p style="font-size: 0.75rem; color: var(--blanc); font-weight: bold; margin-bottom: 15px; letter-spacing: 1px;">SOURCES DES INSTRUS</p>
+
+                <div class="instru-stats">
+                    <div class="instru-item"><span>Boywithuke</span> <b>13</b></div>
+                    <div class="instru-item"><span>Sarvol (Original)</span> <b>7</b></div>
+                    <div class="instru-item"><span>Bad Bunny</span> <b>2</b></div>
+                    <div class="instru-item"><span>s0rrow</span> <b>1</b></div>
+                </div>
+
+                <p style="font-size: 0.65rem; color: var(--gris-texte); margin-top: 20px; line-height: 1.4;">
+                    <i>Chaque instru tiers est utilisée dans un but créatif et de partage.</i>
+                </p>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Discographie</h1>
+            <p class="credits-text">
+                Musiques 100% Sarvol & créations sur instrus tiers 🎤
+            </p>
+
+            <table class="tracklist">
+                <thead>
+                    <tr style="text-align: left; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <th style="padding: 10px;">#</th>
+                        <th>TITRE</th>
+                        <th>FORMAT</th>
+                    </tr>
+                </thead>
+                <tbody id="playlist-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="player-bar">
+        <div class="now-playing">
+            <div style="width: 56px; height: 56px; background: var(--rouge); margin-right: 15px; border-radius: 4px; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 1.2rem;">S</div>
+            <div class="now-playing-info">
+                <h4 id="current-track-title">Choisis un son</h4>
+                <p>Sarvol</p>
+            </div>
+        </div>
+        <div class="player-controls">
+            <audio id="main-audio" controls src=""></audio>
+        </div>
+        <div style="width: 30%;"></div>
+    </div>
+
+    <script>
+        const tracks = [
+            "Amour_impossible.mp3", "Finito.mp3", "Je m'en fou.mp3", "Oups.mp3",
+            "Amour_noir.mp3", "Ghost.m4a", "Lune.mp3", "Perdu.mp3",
+            "Automatique.m4a", "Hibiscus.mp3", "Ma_star.mp3", "Shadow_Alliance_op_1.mp3",
+            "Boucle.mp3", "IDGAF.m4a", "Mon_coeur.mp3", "Sick.mp3",
+            "Camille.mp3", "I love my live.mp3", "Mon étoile.mp3", "Unique.mp3",
+            "Dakiti_remix_Sarvol.mp3", "Inseparables.mp3", "Nostalgique.mp3", "yonaguni_remix_sarvol.mp3"
+        ];
+
+        const playlistBody = document.getElementById('playlist-body');
+        const audioPlayer = document.getElementById('main-audio');
+        const currentTitle = document.getElementById('current-track-title');
+
+        tracks.forEach((track, index) => {
+            const tr = document.createElement('tr');
+            const ext = track.split('.').pop();
+            const name = track.replace('.' + ext, '').replace(/_/g, ' ');
+
+            tr.innerHTML = `
+                <td class="play-icon">${index + 1}</td>
+                <td class="track-title">${name}</td>
+                <td>${ext.toUpperCase()}</td>
+            `;
+
+            tr.onclick = () => {
+                audioPlayer.src = "musique/" + track;
+                audioPlayer.play();
+                currentTitle.innerText = name;
+            };
+
+            playlistBody.appendChild(tr);
+        });
+    </script>
+</body>
+</html>
